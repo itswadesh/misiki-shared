@@ -42,7 +42,7 @@
 </template>
 
 <script>
-import { Textbox } from '~/../shared/components/ui'
+import { Textbox } from '~/shared/components/ui'
 
 export default {
   layout: 'account',

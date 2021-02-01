@@ -110,11 +110,11 @@
 
 <script>
 import { mapActions } from 'vuex'
-import { Textbox, Submit } from '~/../shared/components/ui'
-import { Error } from '~/../shared/components'
-import getOtp from '~/../shared/gql/user/getOtp.gql'
-import verifyOtp from '~/../shared/gql/user/verifyOtp.gql'
-import signIn from '~/../shared/gql/user/signIn.gql'
+import { Textbox, Submit } from '~/shared/components/ui'
+import { Error } from '~/shared/components'
+import getOtp from '~/gql/user/getOtp.gql'
+import verifyOtp from '~/gql/user/verifyOtp.gql'
+import signIn from '~/gql/user/signIn.gql'
 export default {
   middleware: ['isGuest', 'geo'],
   components: { Textbox, Error, Submit },

@@ -87,13 +87,13 @@
 </template>
 
 <script>
-import { Textbox } from '~/../shared/components/ui'
-import { Header } from '~/../shared/components'
+import { Textbox } from '~/shared/components/ui'
+import { Header } from '~/shared/components'
 import vSelect from 'vue-select'
-import saveAddress from '~/../shared/gql/user/saveAddress.gql'
-// import addAddress from '~/../shared/gql/user/addAddress.gql'
-import GET_STATES from '~/../shared/gql/state/states.gql'
-import address from '~/../shared/gql/user/address.gql'
+import saveAddress from '~/gql/user/saveAddress.gql'
+// import addAddress from '~/gql/user/addAddress.gql'
+import GET_STATES from '~/gql/state/states.gql'
+import address from '~/gql/user/address.gql'
 import { mapGetters } from 'vuex'
 
 export default {

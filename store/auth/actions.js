@@ -1,11 +1,11 @@
-import updateProfile from './../../gql/user/updateProfile.gql'
-import me from './../../gql/user/me.gql'
-import signOut from './../../gql/user/signOut.gql'
-import login from './../../gql/user/login.gql'
-import register from './../../gql/user/register.gql'
-import changePassword from './../../gql/user/changePassword.gql'
-import getOtp from './../../gql/user/getOtp.gql'
-import verifyOtp from './../../gql/user/verifyOtp.gql'
+import updateProfile from '~/gql/user/updateProfile.gql'
+import me from '~/gql/user/me.gql'
+import signOut from '~/gql/user/signOut.gql'
+import login from '~/gql/user/login.gql'
+import register from '~/gql/user/register.gql'
+import changePassword from '~/gql/user/changePassword.gql'
+import getOtp from '~/gql/user/getOtp.gql'
+import verifyOtp from '~/gql/user/verifyOtp.gql'
 
 export default {
     async fetch({ commit, state, getters }) {

@@ -17,27 +17,27 @@ HTTP_ENDPOINT = dev ? HTTP_ENDPOINT : 'https://apiv2.misiki.in'
 export const head = HEAD
 export const components = true
 export const ssr = true
-export const loading = '~/../shared/components/ui/Loading.vue'
+export const loading = '~/shared/components/ui/Loading.vue'
 export const css = [
-  '~/../shared/assets/css/swal.css',
-  '~/../shared/assets/css/animations.css',
-  '~/../shared/assets/css/pulse.css',
-  '~/../shared/assets/css/badge.css',
-  '~/../shared/assets/css/form.css',
+  '~/shared/assets/css/swal.css',
+  '~/shared/assets/css/animations.css',
+  '~/shared/assets/css/pulse.css',
+  '~/shared/assets/css/badge.css',
+  '~/shared/assets/css/form.css',
 ]
 export const plugins = [
-  { src: '~/../shared/plugins/map.js', mode: 'client' },
-  { src: '~/../shared/plugins/VueYoutube.js', mode: 'client' },
-  { src: '~/../shared/plugins/swal.js', mode: 'client' },
-  { src: '~/../shared/plugins/ui.js' },
-  { src: '~/../shared/plugins/filters.js' },
-  { src: '~/../shared/plugins/init.js', mode: 'client' },
-  { src: '~/../shared/plugins/lazy.js', mode: 'client' },
-  { src: '~/../shared/plugins/carousel.js', mode: 'client' },
-  { src: '~/../shared/plugins/social.js', mode: 'client' },
-  { src: '~/../shared/plugins/scroll.js', mode: 'client' },
+  { src: '~/shared/plugins/map.js', mode: 'client' },
+  { src: '~/shared/plugins/VueYoutube.js', mode: 'client' },
+  { src: '~/shared/plugins/swal.js', mode: 'client' },
+  { src: '~/shared/plugins/ui.js' },
+  { src: '~/shared/plugins/filters.js' },
+  { src: '~/shared/plugins/init.js', mode: 'client' },
+  { src: '~/shared/plugins/lazy.js', mode: 'client' },
+  { src: '~/shared/plugins/carousel.js', mode: 'client' },
+  { src: '~/shared/plugins/social.js', mode: 'client' },
+  { src: '~/shared/plugins/scroll.js', mode: 'client' },
 ]
-// nuxt-purgecss is required. else it will eliminate All styles used in ~/../shared/components (which style is not used any where else)
+// nuxt-purgecss is required. else it will eliminate All styles used in ~/shared/components (which style is not used any where else)
 export const buildModules = [
   '@nuxtjs/apollo',
   'vue-sweetalert2/nuxt',
@@ -57,7 +57,7 @@ export const webfontloader = {
 }
 export const tailwindcss = {
   configPath: '../shared/config/tailwind.config.js',
-  cssPath: '~/../shared/assets/css/tailwind.css',
+  cssPath: '~/shared/assets/css/tailwind.css',
   purgeCSSInDev: false,
   exposeConfig: false,
 }

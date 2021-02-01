@@ -10,7 +10,7 @@
       >
         <PlusIcon class="w-10 mr-1" />ADD NEW ADDRESS
       </nuxt-link>
-      <ApolloQuery :query="require('~/../shared/gql/user/addresses.gql')">
+      <ApolloQuery :query="require('~/gql/user/addresses.gql')">
         <template v-slot="{ result: { error, data }, isLoading }">
           <content-loader
             v-if="isLoading"
@@ -64,9 +64,9 @@
 </template>
 <script>
 // import Vue from 'vue'
-// import addresses from '~/../shared/gql/user/addresses.gql'
+// import addresses from '~/gql/user/addresses.gql'
 import { ContentLoader } from 'vue-content-loader'
-import deleteAddress from '~/../shared/gql/user/deleteAddress.gql'
+import deleteAddress from '~/gql/user/deleteAddress.gql'
 // import gql from 'graphql-tag'
 import Heading from './Heading'
 import ListSkeleton from './ui/ListSkeleton'

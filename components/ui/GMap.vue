@@ -4,7 +4,7 @@
 
 <script>
 import { mapGetters } from 'vuex'
-// import gmapsInit from '~/../shared/lib/gmaps'
+// import gmapsInit from '~/shared/lib/gmaps'
 // Included inside plugins
 export default {
   name: 'GMap',
