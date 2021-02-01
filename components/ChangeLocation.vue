@@ -14,7 +14,7 @@
         </svg> Use Current Location
       </button>-->
       <h3 class="my-4 text-xl text-gray-600">Please select location</h3>
-      <ApolloQuery :query="require('~/../shared/gql/location/cities.gql')">
+      <ApolloQuery :query="require('~/gql/location/cities.gql')">
         <template v-slot="{ result: { error, data }, isLoading }">
           <LocationPillsSkeleton v-if="isLoading" />
           <ErrComponent v-else-if="error" :error="error" />
@@ -41,13 +41,13 @@
   </div>
 </template>
 <script>
-import Heading from '~/../shared/components/Heading'
+import Heading from '~/shared/components/Heading'
 import {
   Submit,
   Textbox,
   LocationPillsSkeleton,
-} from '~/../shared/components/ui'
-import { location } from '~/../shared/mixins'
+} from '~/shared/components/ui'
+import { location } from '~/shared/mixins'
 import { mapActions } from 'vuex'
 export default {
   components: { Heading, Submit, Textbox, LocationPillsSkeleton },

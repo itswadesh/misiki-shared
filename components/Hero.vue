@@ -1,7 +1,7 @@
 <template>
   <div class="w-full h-48">
     <ApolloQuery
-      :query="require('~/../shared/gql/banner/banners.gql')"
+      :query="require('~/gql/banner/banners.gql')"
       :variables="{ city, type: 'slider', active: true }"
     >
       <template v-slot="{ result: { error, data }, isLoading }">

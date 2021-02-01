@@ -43,8 +43,8 @@
 </template>
 
 <script>
-import fileUpload from '~/../shared/gql/file/fileUpload.gql'
-import deleteFile from '~/../shared/gql/product/deleteFile.gql'
+import fileUpload from '~/gql/file/fileUpload.gql'
+import deleteFile from '~/gql/product/deleteFile.gql'
 import { XIcon } from 'vue-feather-icons'
 const STATUS_INITIAL = 0,
   STATUS_SAVING = 1,

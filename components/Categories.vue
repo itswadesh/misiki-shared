@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import categories from '~/../shared/gql/category/categories.gql'
+import categories from '~/gql/category/categories.gql'
 
 export default {
   data() {

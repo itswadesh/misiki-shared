@@ -1,8 +1,8 @@
-import cart from './../../gql/cart/cart.gql'
-import addToCart from './../../gql/cart/addToCart.gql'
-import checkout from './../../gql/cart/checkout.gql'
-import applyCoupon from './../../gql/cart/applyCoupon.gql'
-import removeCoupon from './../../gql/cart/removeCoupon.gql'
+import cart from '~/gql/cart/cart.gql'
+import addToCart from '~/gql/cart/addToCart.gql'
+import checkout from '~/gql/cart/checkout.gql'
+import applyCoupon from '~/gql/cart/applyCoupon.gql'
+import removeCoupon from '~/gql/cart/removeCoupon.gql'
 
 export default {
   async fetch({ commit, state, getters }) {

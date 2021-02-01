@@ -1,5 +1,5 @@
-import SETTINGS from './../../gql/settings/settings.gql'
-import SUBSCRIPTION_SETTINGS_UPDATED from './../../gql/settings/settingsUpdated.gql'
+import SETTINGS from '~/gql/settings/settings.gql'
+import SUBSCRIPTION_SETTINGS_UPDATED from '~/gql/settings/settingsUpdated.gql'
 
 export default {
   async fetch({ commit, state, getters }) {

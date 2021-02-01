@@ -1,4 +1,4 @@
-import { Submit } from '~/../shared/components/ui'
+import { Submit } from '~/shared/components/ui'
 export default {
     data() {
         return {
