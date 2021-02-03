@@ -1,5 +1,5 @@
 import {mapGetters} from 'vuex'
-import getLocation from './../gql/location/getLocation.gql'
+import getLocation from '~/gql/location/getLocation.gql'
 const { GOOGLE_MAPS_KEY } = process.env
 export default {
   data() {

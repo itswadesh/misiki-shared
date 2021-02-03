@@ -1,4 +1,4 @@
-import search from './../gql/product/search.gql'
+import search from '~/gql/product/search.gql'
 
 export default {
   data: () => ({
