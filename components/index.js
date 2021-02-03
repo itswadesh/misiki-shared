@@ -3,7 +3,6 @@ import AddressList from './AddressList'
 import Avatar from './Avatar'
 import Banner from './Banner'
 import Breadcrumb from './Breadcrumb'
-import Carousel from './Carousel'
 import Categories from './Categories'
 import ChangePassword from './ChangePassword'
 import ChangeLocation from './ChangeLocation'
@@ -33,7 +32,6 @@ export {
     Avatar,
     Banner,
     Breadcrumb,
-    Carousel,
     Categories,
     ChangePassword,
     ChangeLocation,

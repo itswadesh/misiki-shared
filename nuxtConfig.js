@@ -12,8 +12,7 @@ let {
   WWW_URL,
 } = require('./config')
 // WS_ENDPOINT = dev ? WS_ENDPOINT : 'https://apiv2.misiki.in'
-HTTP_ENDPOINT = dev ? HTTP_ENDPOINT : 'https://apiv2.misiki.in'
-// console.log('zzzzzzzzzzzzzzzzzzzzzzzzzzz', HTTP_ENDPOINT, GOOGLE_MAPS_API_KEY)
+HTTP_ENDPOINT = HTTP_ENDPOINT || 'https://apiv2.misiki.in'
 export const head = HEAD
 export const components = true
 export const ssr = true
