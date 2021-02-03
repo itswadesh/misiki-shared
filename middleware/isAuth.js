@@ -1,4 +1,4 @@
-import me from './../gql/user/me.gql'
+import me from '~/gql/user/me.gql'
 export default async function ({ app, error, store, redirect,route  }) {
   const client = app.apolloProvider.defaultClient
   try {
