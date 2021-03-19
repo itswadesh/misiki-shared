@@ -132,9 +132,6 @@ export const build = {
   postcss: {
     plugins: {
       tailwindcss: join(__dirname, '../shared/config/tailwind.config.js'),
-      'postcss-pxtorem': {
-        propList: ['*', '!border*'],
-      },
     },
   },
 }
