@@ -4,18 +4,6 @@
      v-lazy="p.type === 'V' ? 'veg.png' : 'non-veg.png'"
       class="absolute top-0 right-0 w-5 mt-1 mr-1"
     />-->
-    <!-- <content-loader
-        :height="400"
-        :speed="2"
-        primaryColor="#f3f3f3"
-        secondaryColor="#ecebeb"
-      >
-        <rect x="15" y="200" rx="4" ry="4" width="300" height="30" />
-        <rect x="15" y="250" rx="4" ry="4" width="70" height="25" />
-        <rect x="180" y="250" rx="4" ry="4" width="100" height="25" />
-        <rect x="360" y="250" rx="4" ry="4" width="25" height="25" />
-         <rect x="15" y="320" rx="4" ry="4" width="70" height="20" />
-      </content-loader> -->
     <nuxt-link :to="`/${p.slug}`" class="relative block">
       <div
         v-if="p.time == '12 - 2 PM'"
@@ -62,12 +50,11 @@
 
 <script>
 import { mapGetters } from 'vuex'
-import { ContentLoader } from 'vue-content-loader'
 import { Ratingcircle } from './ui'
 export default {
   props: ['p'],
   methods: {},
-  components: { Ratingcircle, ContentLoader },
+  components: { Ratingcircle },
   computed: { ...mapGetters({ settings: 'settings' }) },
 }
 </script>

@@ -12,17 +12,7 @@
       </nuxt-link>
       <ApolloQuery :query="require('~/gql/user/addresses.gql')">
         <template v-slot="{ result: { error, data }, isLoading }">
-          <content-loader
-            v-if="isLoading"
-            :height="400"
-            :speed="2"
-            primaryColor="#fff"
-            secondaryColor="#ecebeb"
-          >
-            <rect x="30" y="20" rx="4" ry="4" width="135" height="30" />
-            <rect x="30" y="60" rx="4" ry="4" width="125" height="10" />
-            <rect x="350" y="20" rx="4" ry="4" width="30" height="30" />
-          </content-loader>
+          <div v-if="isLoading"></div>
           <ErrComponent v-else-if="error" :error="error" />
           <div v-else-if="data && data.addresses">
             <div
@@ -65,7 +55,6 @@
 <script>
 // import Vue from 'vue'
 // import addresses from '~/gql/user/addresses.gql'
-import { ContentLoader } from 'vue-content-loader'
 import deleteAddress from '~/gql/user/deleteAddress.gql'
 // import gql from 'graphql-tag'
 import Heading from './Heading'
@@ -75,7 +64,7 @@ import { PlusIcon } from 'vue-feather-icons'
 export default {
   layout: 'account',
   middleware: ['isAuth'],
-  components: { Heading, ListSkeleton, ContentLoader, PlusIcon },
+  components: { Heading, ListSkeleton, PlusIcon },
   data() {
     return {
       // addresses: []
