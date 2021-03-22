@@ -59,16 +59,12 @@ export const tailwindcss = {
   cssPath: '~/shared/assets/css/tailwind.css',
   purgeCSSInDev: false,
   exposeConfig: false,
+  jit: true,
 }
 export const purgeCSS = {
   content: [`./**/*.vue`, `./../shared/**/*.vue`], // This line will not remove those classes which is used explicitly on shared/components/ folder
   whitelist: ['css-selector-to-whitelist'], // e.g. sweetalert
 }
-export const modules = [
-  '@nuxtjs/proxy',
-  'cookie-universal-nuxt',
-  '@nuxtjs/google-analytics',
-]
 // These 2 only used at www
 export const pwa = {}
 //  export const oneSignal = {
@@ -129,9 +125,9 @@ export const generate = {
 }
 export const build = {
   parallel: true,
-  postcss: {
-    plugins: {
-      tailwindcss: join(__dirname, '../shared/config/tailwind.config.js'),
-    },
-  },
+  // postcss: {
+  //   plugins: {
+  //     tailwindcss: join(__dirname, '../shared/config/tailwind.config.js'),
+  //   },
+  // },
 }
