@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full h-48">
+  <div class="w-full heightHero">
     <ApolloQuery
       :query="require('~/gql/banner/banners.gql')"
       :variables="{ city, type: 'slider', active: true }"
@@ -26,7 +26,7 @@
             lazyLoad="ondemand"
           >
             <div v-for="(i, ix) in data.banners.data" :key="ix">
-              <img class="object-cover w-full h-48" v-lazy="i.img" alt />
+              <img class="object-cover w-full heightHero" v-lazy="i.img" alt />
             </div>
           </VueSlickCarousel>
         </div>
@@ -69,3 +69,8 @@ export default {
   },
 }
 </script>
+<style scoped>
+.heightHero{
+  height: 330px;
+}
+</style>
