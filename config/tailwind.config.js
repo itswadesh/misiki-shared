@@ -1,14 +1,20 @@
 module.exports = {
-  theme: {
-    extend: {
-      spacing: {
-        72: '18rem',
-        84: '21rem',
-        96: '24rem',
-      },
-    },
+  purge: {
+    enabled: process.env.NODE_ENV === 'production',
+    content: [
+      'components/**/*.vue',
+      'layouts/**/*.vue',
+      'pages/**/*.vue',
+      'plugins/**/*.js',
+      'nuxt.config.js',
+      // TypeScript
+      'plugins/**/*.ts',
+      'nuxt.config.ts',
+      // Shared components
+      'shared/components/**/*.vue',
+    ],
   },
-  variants: {},
+  darkMode: false, // or 'media' or 'class'
   variants: {
     extend: {
       backgroundColor: ['active'],
