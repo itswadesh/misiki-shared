@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="w-full text-center">
     <div v-if="errorStr">
       Sorry, but the following error occurred: {{ errorStr }}
     </div>

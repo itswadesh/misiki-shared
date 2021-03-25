@@ -1,22 +1,11 @@
 <template>
-  <div class="w-full heightHero">
+  <div class="w-full h-48">
     <ApolloQuery
       :query="require('~/gql/banner/banners.gql')"
       :variables="{ city, type: 'slider', active: true }"
     >
       <template v-slot="{ result: { error, data }, isLoading }">
-        <content-loader
-          v-if="isLoading"
-          :height="70"
-          :speed="2"
-          primaryColor="#f3f3f3"
-          secondaryColor="#ecebeb"
-        >
-          <rect x="30" y="15" width="50" height="50" />
-          <rect x="130" y="15" rx="4" ry="4" width="50" height="50" />
-          <rect x="230" y="15" rx="4" ry="4" width="50" height="50" />
-          <rect x="330" y="15" rx="4" ry="4" width="50" height="50" />
-        </content-loader>
+        <div v-if="isLoading">Loading...</div>
         <ErrComponent v-else-if="error" />
         <div v-else-if="data && data.banners.data.length > 0">
           <VueSlickCarousel
@@ -26,7 +15,7 @@
             lazyLoad="ondemand"
           >
             <div v-for="(i, ix) in data.banners.data" :key="ix">
-              <img class="object-cover w-full heightHero" v-lazy="i.img" alt />
+              <img class="object-cover w-full h-48" v-lazy="i.img" alt />
             </div>
           </VueSlickCarousel>
         </div>
@@ -36,10 +25,6 @@
 </template>
 
 <script>
-import VueSlickCarousel from 'vue-slick-carousel'
-import 'vue-slick-carousel/dist/vue-slick-carousel.css'
-import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
-
 export default {
   data() {
     return {
@@ -47,7 +32,6 @@ export default {
       banners: null,
     }
   },
-  components: { VueSlickCarousel },
   middleware: ['geo'],
   async created() {
     this.city = (this.$cookies.get('geo') || {}).city
@@ -69,8 +53,3 @@ export default {
   },
 }
 </script>
-<style scoped>
-.heightHero{
-  height: 330px;
-}
-</style>

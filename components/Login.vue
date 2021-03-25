@@ -1,6 +1,6 @@
 <template>
-  <div class="flex flex-col items-center justify-center h-screen bg-gray-200">
-    <div class="w-full px-4 lg:w-1/3">
+  <div class="">
+    <div class="px-4 w-96">
       <div class="bg-white rounded shadow">
         <div class="text-white text-secondary">
           <h1 class="p-3 mb-2 text-xl text-center">

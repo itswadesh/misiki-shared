@@ -3,7 +3,6 @@
 @import 'tailwindcss/utilities';
 @layer components {
   body {
-    font-family: Karla, Roboto, sans-serif;
     color: #2d2d2d;
   }
   html,

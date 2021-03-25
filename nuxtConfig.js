@@ -23,6 +23,7 @@ export const css = [
   '~/shared/assets/css/pulse.css',
   '~/shared/assets/css/badge.css',
   '~/shared/assets/css/form.css',
+  '~/shared/assets/fonts.css',
 ]
 export const plugins = [
   { src: '~/shared/plugins/map.js', mode: 'client' },
@@ -32,7 +33,6 @@ export const plugins = [
   { src: '~/shared/plugins/filters.js' },
   { src: '~/shared/plugins/init.js', mode: 'client' },
   { src: '~/shared/plugins/lazy.js', mode: 'client' },
-  { src: '~/shared/plugins/carousel.js', mode: 'client' },
   { src: '~/shared/plugins/social.js', mode: 'client' },
   { src: '~/shared/plugins/scroll.js', mode: 'client' },
 ]
@@ -49,13 +49,9 @@ export const buildModules = [
   'nuxt-purgecss',
   'nuxt-webfontloader',
 ]
-export const webfontloader = {
-  google: {
-    families: ['Karla:400,700&display=swap'],
-  },
-}
+export const webfontloader = {}
 export const tailwindcss = {
-  configPath: '../shared/config/tailwind.config.js',
+  configPath: '~/shared/config/tailwind.config.js',
   cssPath: '~/shared/assets/css/tailwind.css',
   purgeCSSInDev: false,
   exposeConfig: false,
