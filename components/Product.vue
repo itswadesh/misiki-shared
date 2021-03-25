@@ -1,5 +1,5 @@
 <template>
-  <div class="relative mx-2 mb-2 border rounded shadow" v-if="p">
+  <div class="relative mx-1 my-3 mb-2 bg-white border rounded shadow sm:mx-3 sm:w-56" v-if="p">
     <!-- <img
      v-lazy="p.type === 'V' ? 'veg.png' : 'non-veg.png'"
       class="absolute top-0 right-0 w-5 mt-1 mr-1"
@@ -17,33 +17,37 @@
       >
         Dinner
       </div>
-      <img v-lazy="`${p.img}`" alt class="object-cover w-full h-24 mb-2" />
+      <img v-lazy="`${p.img}`" alt class="object-cover w-full h-32 mb-2 rounded" />
     </nuxt-link>
     <div class="px-2">
-      <div v-if="p.ratings" class="flex items-center">
-        <Ratingcircle :rating="p.ratings" class="m-review" />
-        <div class="pl-2 text-xs">{{ p.reviews }}</div>
-      </div>
-      <nuxt-link :to="`/${p.slug}`">
-        <h2 class="text-xs font-bold tracking-wide">{{ p.name }}</h2>
-      </nuxt-link>
-      <p>{{ p.description }}</p>
-      <div class="flex flex-wrap items-center justify-between my-2">
-        <div class="font-bold">
-          {{ p.price | currency(settings.currency_symbol) }}
+      <div class="relative">
+        <div class="h-6">
+          <div v-if="p.ratings" class="flex items-center">
+            <Ratingcircle :rating="p.ratings" class="m-review" />
+            <div class="pl-2 text-xs">{{ p.reviews }}</div>
+          </div>
         </div>
-        <div v-if="p.stock < 1" class="text-xs text-red-500">Out of stock</div>
-        <div v-else class="text-xs text-red-500">
-          <span v-if="p.stock < 6">Only</span> {{ p.stock }} left
+        <nuxt-link :to="`/${p.slug}`">
+          <h2 class="p-2 text-xs font-bold tracking-wide truncate">{{ p.name }}</h2>
+        </nuxt-link>
+        <p>{{ p.description }}</p>
+        <div class="flex flex-wrap items-center justify-between my-2">
+          <div class="font-bold">
+            {{ p.price | currency(settings.currency_symbol) }}
+          </div>
+          <div v-if="p.stock < 1" class="text-xs text-red-500">Out of stock</div>
+          <div v-else class="text-xs text-red-500">
+            <span v-if="p.stock < 6">Only</span> {{ p.stock }} left
+          </div>
+          <img
+            v-lazy="p.type === 'V' ? 'veg.png' : 'non-veg.png'"
+            class="w-5 mt-1 mr-1 bg-gray-500"
+          />
         </div>
-        <img
-          v-lazy="p.type === 'V' ? 'veg.png' : 'non-veg.png'"
-          class="w-5 mt-1 mr-1"
-        />
       </div>
-      <div class="py-1 text-xs border-t" v-if="p.vendor">
-        By {{ p.vendor.info.restaurant }}
-      </div>
+      <div class="bottom-0 py-1 text-xs border-t " v-if="p.vendor">
+          By {{ p.vendor.info.restaurant }}
+        </div>
     </div>
   </div>
 </template>
