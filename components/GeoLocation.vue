@@ -1,12 +1,12 @@
 <template>
-  <div class="w-full text-center">
+  <div class="text-center">
     <div v-if="errorStr">
       Sorry, but the following error occurred: {{ errorStr }}
     </div>
     <div v-if="gettingLocation">
       <i>Getting your location...</i>
     </div>
-    <div v-if="geo" class="mt-6 mb-2 text-center align-middle">
+    <div v-if="geo" class="text-center align-middle">
       <div class="flex items-center justify-center">
         <svg
           class="w-6 h-6 transition-all ease-out transition-medium"
