@@ -1,6 +1,6 @@
 <template>
-  <div class="">
-    <div class="px-4 w-96">
+  <div class="flex flex-col items-center justify-center h-full mt-48">
+    <div class="w-2/3 px-4 mx-auto lg:w-1/2">
       <div class="bg-white rounded shadow">
         <div class="text-white text-secondary">
           <h1 class="p-3 mb-2 text-xl text-center">
