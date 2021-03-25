@@ -1,6 +1,6 @@
 <template>
   <div
-    class="w-full px-2 mt-0 lg:w-2/4 lg:mt-10 lg:pr-20 xs:w-full lg:px-10 headings"
+    class="w-full px-2 mt-0 lg:pr-20 xs:w-full lg:px-10"
   >
     <Heading title="Manage Address" />
     <div class="w-full my-4">
@@ -31,7 +31,7 @@
           <p class="w-1 h-1 m-1 bg-gray-500 rounded-full"></p>
           <p class="w-1 h-1 m-1 bg-gray-500 rounded-full"></p>
               </nuxt-link>-->
-              <div class="w-full py-2 text-sm leading-loose">
+              <div class="w-full p-4 text-sm leading-loose">
                 <p>
                   <b>{{ a.firstName }} {{ a.lastName }}</b>
                 </p>
