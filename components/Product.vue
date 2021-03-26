@@ -1,9 +1,12 @@
 <template>
-  <div class="relative mx-1 my-3 mb-2 bg-white border rounded shadow sm:mx-3 sm:w-56" v-if="p">
+  <div
+    class="relative mx-1 my-3 mb-2 bg-white border rounded shadow sm:mx-3 sm:w-56"
+    v-if="p"
+  >
     <!-- <img
-     v-lazy="p.type === 'V' ? 'veg.png' : 'non-veg.png'"
-      class="absolute top-0 right-0 w-5 mt-1 mr-1"
-    />-->
+      v-lazy="p.type === 'V' ? '/veg.png' : '/non-veg.png'"
+      class="absolute top-0 left-0 z-50 w-5 mt-1 ml-1 bg-white"
+    /> -->
     <nuxt-link :to="`/${p.slug}`" class="relative block">
       <div
         v-if="p.time == '12 - 2 PM'"
@@ -17,7 +20,11 @@
       >
         Dinner
       </div>
-      <img v-lazy="`${p.img}`" alt class="object-cover w-full h-32 mb-2 rounded" />
+      <img
+        v-lazy="`${p.img}`"
+        alt
+        class="object-cover w-full h-32 mb-2 rounded"
+      />
     </nuxt-link>
     <div class="px-2">
       <div class="relative">
@@ -28,26 +35,30 @@
           </div>
         </div>
         <nuxt-link :to="`/${p.slug}`">
-          <h2 class="p-2 text-xs font-bold tracking-wide truncate">{{ p.name }}</h2>
+          <h2 class="p-2 text-xs font-bold tracking-wide truncate">
+            {{ p.name }}
+          </h2>
         </nuxt-link>
         <p>{{ p.description }}</p>
         <div class="flex flex-wrap items-center justify-between my-2">
           <div class="font-bold">
             {{ p.price | currency(settings.currency_symbol) }}
           </div>
-          <div v-if="p.stock < 1" class="text-xs text-red-500">Out of stock</div>
+          <div v-if="p.stock < 1" class="text-xs text-red-500">
+            Out of stock
+          </div>
           <div v-else class="text-xs text-red-500">
             <span v-if="p.stock < 6">Only</span> {{ p.stock }} left
           </div>
           <img
-            v-lazy="p.type === 'V' ? 'veg.png' : 'non-veg.png'"
-            class="w-5 mt-1 mr-1 bg-gray-500"
+            v-lazy="p.type === 'V' ? '/veg.png' : '/non-veg.png'"
+            class="w-5 mt-1 mr-1"
           />
         </div>
       </div>
-      <div class="bottom-0 py-1 text-xs border-t " v-if="p.vendor">
-          By {{ p.vendor.info.restaurant }}
-        </div>
+      <div class="bottom-0 py-1 text-xs border-t" v-if="p.vendor">
+        By {{ p.vendor.info.restaurant }}
+      </div>
     </div>
   </div>
 </template>

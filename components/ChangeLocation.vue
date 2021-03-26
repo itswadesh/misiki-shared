@@ -2,7 +2,7 @@
   <div class="h-screen">
     <Heading title="Search your area" />
     <div class="mx-4 my-8">
-      <!-- <button class="flex items-center text-orange-500">
+      <!-- <button class="flex items-center text-primary-500">
         <svg
           class="w-6 h-6 transition-all ease-out transition-medium"
           viewBox="0 0 24 24"
@@ -42,11 +42,7 @@
 </template>
 <script>
 import Heading from '~/shared/components/Heading'
-import {
-  Submit,
-  Textbox,
-  LocationPillsSkeleton,
-} from '~/shared/components/ui'
+import { Submit, Textbox, LocationPillsSkeleton } from '~/shared/components/ui'
 import { location } from '~/shared/mixins'
 import { mapActions } from 'vuex'
 export default {

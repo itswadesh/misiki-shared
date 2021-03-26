@@ -47,7 +47,7 @@
           </div>
           <div
             v-if="p.stock < 1"
-            class="px-3 text-xs text-white bg-orange-500 rounded-full"
+            class="px-3 text-xs text-white bg-primary-500 rounded-full"
           >
             Sold out
           </div>
