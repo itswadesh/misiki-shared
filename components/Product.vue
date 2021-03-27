@@ -44,6 +44,9 @@
           <div class="font-bold">
             {{ p.price | currency(settings.currency_symbol) }}
           </div>
+          <del class="font-bold">
+            {{ p.mrp | currency(settings.currency_symbol) }}
+          </del>
           <div v-if="p.stock < 1" class="text-xs text-red-500">
             Out of stock
           </div>
