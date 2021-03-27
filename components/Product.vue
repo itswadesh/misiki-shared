@@ -35,7 +35,7 @@
           </div>
         </div>
         <nuxt-link :to="`/${p.slug}`">
-          <h2 class="p-2 text-xs font-bold tracking-wide truncate">
+          <h2 class="p-2 text-xs font-bold tracking-wide line-clamp-2">
             {{ p.name }}
           </h2>
         </nuxt-link>

@@ -47,5 +47,9 @@ module.exports = {
       backgroundColor: ['active'],
     },
   },
-  plugins: [require('@tailwindcss/forms'), require('tailwindcss-rtl')],
+  plugins: [
+    require('@tailwindcss/line-clamp'),
+    require('@tailwindcss/aspect-ratio'),
+    require('@tailwindcss/forms'),
+  ],
 }
