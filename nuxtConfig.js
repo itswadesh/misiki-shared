@@ -76,7 +76,7 @@ export const pwa = {}
 export const googleAnalytics = {
   id: GOOGLE_ANALYTICS_ID,
 }
-export const server = dev ? 'http://localhost:8888' : WWW_URL
+export const server = dev ? 'http://localhost:8887' : WWW_URL
 export const apollo = {
   // watchLoading: '../shared/plugins/apollo-watch-loading-handler.js',
   // errorHandler: './plugins/apollo-error-handler.js',
