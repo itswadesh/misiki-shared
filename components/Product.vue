@@ -35,7 +35,7 @@
           </div>
         </div>
         <nuxt-link :to="`/${p.slug}`">
-          <h2 class="p-2 text-xs font-bold tracking-wide line-clamp-2">
+          <h2 class="h-8 pr-2 text-xs font-bold tracking-wide line-clamp-2">
             {{ p.name }}
           </h2>
         </nuxt-link>
@@ -44,7 +44,7 @@
           <div class="font-bold">
             {{ p.price | currency(settings.currency_symbol) }}
           </div>
-          <del class="font-bold">
+          <del class="text-xs text-gray-700">
             {{ p.mrp | currency(settings.currency_symbol) }}
           </del>
           <div v-if="p.stock < 1" class="text-xs text-red-500">
