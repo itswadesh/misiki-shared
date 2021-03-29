@@ -1,7 +1,7 @@
 <template>
   <div
     class="relative mx-1 my-3 mb-2 bg-white border rounded shadow sm:mx-3 sm:w-56"
-    v-if="p"
+    v-if="product"
   >
     <!-- <img
       v-lazy="product.type === 'V' ? '/veg.png' : '/non-veg.png'"

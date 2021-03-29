@@ -26,15 +26,15 @@ export const css = [
   '~/shared/assets/fonts.css',
 ]
 export const plugins = [
-  { src: '~/shared/plugins/map.js', mode: 'client' },
-  { src: '~/shared/plugins/VueYoutube.js', mode: 'client' },
-  { src: '~/shared/plugins/swal.js', mode: 'client' },
+  { src: '~/shared/plugins/map.js', ssr: false },
+  { src: '~/shared/plugins/VueYoutube.js', ssr: false },
+  { src: '~/shared/plugins/swal.js', ssr: false },
   { src: '~/shared/plugins/ui.js' },
   { src: '~/shared/plugins/filters.js' },
-  { src: '~/shared/plugins/init.js', mode: 'client' },
-  { src: '~/shared/plugins/lazy.js', mode: 'client' },
-  { src: '~/shared/plugins/social.js', mode: 'client' },
-  { src: '~/shared/plugins/scroll.js', mode: 'client' },
+  { src: '~/shared/plugins/init.js', ssr: false },
+  { src: '~/shared/plugins/lazy.js', ssr: false },
+  { src: '~/shared/plugins/social.js', ssr: false },
+  { src: '~/shared/plugins/scroll.js', ssr: false },
 ]
 // nuxt-purgecss is required. else it will eliminate All styles used in ~/shared/components (which style is not used any where else)
 export const buildModules = [
