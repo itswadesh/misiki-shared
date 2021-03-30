@@ -68,11 +68,11 @@
 
 <script>
 import { mapGetters } from 'vuex'
-// import { Ratingcircle } from './ui'
+import { Ratingcircle } from './ui'
 export default {
   props: ['product'],
   methods: {},
-  // components: { Ratingcircle },
+  components: { Ratingcircle },
   computed: { ...mapGetters({ settings: 'settings' }) },
 }
 </script>
