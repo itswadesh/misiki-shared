@@ -1,6 +1,6 @@
 <template>
   <div
-    class="relative mx-1 my-3 mb-2 bg-white border rounded shadow sm:mx-3 sm:w-56"
+    class="relative mx-1 my-3 mb-2 bg-white border rounded shadow sm:mx-3"
     v-if="product"
   >
     <!-- <img
@@ -47,6 +47,12 @@
           <del class="text-xs text-gray-700">
             {{ product.mrp | currency(settings.currency_symbol) }}
           </del>
+          <div
+            class="flex items-center justify-center px-1 text-xs text-center text-white bg-green-500 rounded perc"
+            v-show="calculateOffPercent > 0"
+          >
+            {{ calculateOffPercent }}% off
+          </div>
           <div v-if="product.stock < 1" class="text-xs text-red-500">
             Out of stock
           </div>
@@ -73,7 +79,22 @@ export default {
   props: ['product'],
   methods: {},
   components: { Ratingcircle },
-  computed: { ...mapGetters({ settings: 'settings' }) },
+  computed: {
+    ...mapGetters({ settings: 'settings' }),
+    calculateOffPercent() {
+      if (
+        !this.product ||
+        !this.product.mrp ||
+        !this.product.price ||
+        this.product.mrp == 0 ||
+        this.product.price == 0
+      )
+        return 0
+      let percent =
+        ((this.product.mrp - this.product.price) * 100) / this.product.mrp
+      return Math.round(percent)
+    },
+  },
 }
 </script>
 
