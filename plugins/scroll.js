@@ -1,3 +1,7 @@
 import Vue from 'vue'
-import infiniteScroll from 'vue-infinite-scroll'
-Vue.use(infiniteScroll)
+import InfiniteLoading from 'vue-infinite-loading'
+Vue.use(InfiniteLoading, {
+  system: {
+    throttleLimit: 50,
+  },
+})
