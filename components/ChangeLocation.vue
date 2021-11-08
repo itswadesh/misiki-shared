@@ -14,15 +14,25 @@
         </svg> Use Current Location
       </button>-->
       <h3 class="my-4 text-xl text-gray-600">Please select location</h3>
-      <ApolloQuery :query="require('~/gql/location/cities.gql')">
+      <ApolloQuery :query="require('~/gql/location/locations.gql')">
         <template v-slot="{ result: { error, data }, isLoading }">
           <LocationPillsSkeleton v-if="isLoading" />
           <ErrComponent v-else-if="error" :error="error" />
           <div class="flex flex-wrap justify-center" v-else-if="data">
             <button
-              class="px-4 py-2 mb-4 mr-4 text-center bg-gray-200 rounded-full cursor-pointer hover:bg-gray-300"
+              class="
+                px-4
+                py-2
+                mb-4
+                mr-4
+                text-center
+                bg-gray-200
+                rounded-full
+                cursor-pointer
+                hover:bg-gray-300
+              "
               @click="saveLocaion(c)"
-              v-for="c in data.cities.data"
+              v-for="c in data.locations.data"
               :key="c.id"
             >
               {{ c.name }}
@@ -30,13 +40,6 @@
           </div>
         </template>
       </ApolloQuery>
-      <!-- <select v-model="location" filled label="Select City">
-        <option selected="true" value="null">Select Location</option>
-        <option v-for="(c, ix) in cities" :key="ix" :value="c">{{ c.name }}</option>
-      </select>-->
-      <!-- <div class="flex justify-center m-6">
-        <Submit>Save Location</Submit>
-      </div>-->
     </div>
   </div>
 </template>
