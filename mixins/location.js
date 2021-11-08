@@ -85,7 +85,6 @@ export default {
     async locateMe(l) {
       if (l) {
         try {
-          // let location = l.coords
           // const location = (await this.getLocation()).coords; // Location accuracy is too bad shows Anugul
           this.$store.commit('clearErr')
           let g = (
@@ -100,7 +99,7 @@ export default {
             city: g.city,
             state: g.state,
             zip: g.zip,
-            coords: { lat: l.lat, lng: l.lng }
+             lat: l.lat, lng: l.lng 
           }
           console.log('Geo...', geo)
           this.$cookies.set('geo', geo, { path: '/', maxAge: this.settings.locationExpiry })

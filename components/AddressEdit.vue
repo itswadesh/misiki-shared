@@ -70,13 +70,30 @@
           <button
             type="button"
             @click="$router.push('/my/address')"
-            class="w-1/2 p-3 text-sm font-semibold tracking-widest text-black bg-white lg:rounded"
+            class="
+              w-1/2
+              p-3
+              text-sm
+              font-semibold
+              tracking-widest
+              text-black
+              bg-white
+              lg:rounded
+            "
           >
             CANCEL
           </button>
           <button
             type="submit"
-            class="w-1/2 p-3 text-sm font-semibold tracking-widest primary lg:rounded"
+            class="
+              w-1/2
+              p-3
+              text-sm
+              font-semibold
+              tracking-widest
+              primary
+              lg:rounded
+            "
           >
             CONTINUE
           </button>
@@ -90,10 +107,10 @@
 import { Textbox } from '~/shared/components/ui'
 import { Header } from '~/shared/components'
 import vSelect from 'vue-select'
-import saveAddress from '~/gql/user/saveAddress.gql'
-// import addAddress from '~/gql/user/addAddress.gql'
+import saveAddress from '~/gql/address/saveAddress.gql'
+// import addAddress from '~/gql/address/addAddress.gql'
 import GET_STATES from '~/gql/state/states.gql'
-import address from '~/gql/user/address.gql'
+import address from '~/gql/address/address.gql'
 import { mapGetters } from 'vuex'
 
 export default {
@@ -139,9 +156,9 @@ export default {
   },
   methods: {
     async submit(address) {
-      if (address.coords) delete address.coords.__typename
       try {
         if (!address.id) address.id = 'new'
+        address.country = 'India'
         const addr = (this.a = (
           await this.$apollo.mutate({
             mutation: saveAddress,

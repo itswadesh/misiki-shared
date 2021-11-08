@@ -87,7 +87,6 @@ export default {
           delete address.__typename
           delete address.createdAt
           delete address.updatedAt
-          if (address.coords) delete address.coords.__typename
           let order = (
             await this.app.apolloProvider.defaultClient.mutate({
               mutation: checkout,
