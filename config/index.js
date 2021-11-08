@@ -18,7 +18,7 @@ export const sorts = [
 
 export const { PORT = '8887' } = process.env
 export const { WWW_URL = `http://localhost:${PORT}` } = process.env
-
+export const { DOMAIN } = process.env
 export const { GOOGLE_ANALYTICS_ID = 'UA-49421899-13' } = process.env
 
 export const {

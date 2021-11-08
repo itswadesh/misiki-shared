@@ -2,11 +2,17 @@ export default {
   showMenu(state, payload) {
     state.showMenu = payload
   },
-  categories(state, payload) {
-    state.categories = payload
+  megamenu(state, payload) {
+    state.megamenu = payload
+  },
+  popularSearches(state, payload) {
+    state.popularSearches = payload
   },
   settings(state, payload) {
     state.settings = payload
+  },
+  store(state, payload) {
+    state.store = payload
   },
   busy(state, payload) {
     state.loading = payload
@@ -29,18 +35,25 @@ export default {
   },
   setErr(state, e) {
     state.errors = []
-    let vm = this
     if (e.networkError) {
       if (!e.networkError.result) {
         if (
-          e.networkError.message == 'Unexpected token E in JSON at position 0'
+          e.networkError.message === 'Unexpected token E in JSON at position 0'
         )
-          vm.$toast &&
-            vm.$toast.error('Unable to connect to server...').goAway(3000)
-        else state.errors.push('Server is down.')
+          state.errors.push('Server is down.')
+        else state.errors.push(e.toString())
+        state.errors.map((message, i) => {
+          if (this.$toast) this.$toast.error(message).goAway(5000)
+          return false
+        })
       } else if (e.networkError.result && e.networkError.result.errors) {
         e.networkError.result.errors.map(({ message }, i) => {
-          state.errors.push(message)
+          return state.errors.push(message)
+        })
+        // While adding address, it throughs invalid value at zip
+        state.errors.map((message, i) => {
+          if (this.$toast) this.$toast.error(message).goAway(5000)
+          return false
         })
       } else {
         state.errors = e.networkError
@@ -48,20 +61,23 @@ export default {
     } else if (e.graphQLErrors) {
       if (e.graphQLErrors.length < 1) {
         // state.errors.push('Server is down.')
-        vm.$toast && vm.$toast.error(message).goAway(3000)
+        if (this.$toast) this.$toast.error('Error Occured..').goAway(5000)
       } else {
         e.graphQLErrors.map(({ message }, i) => {
-          state.errors.push(message)
+          return state.errors.push(message)
         })
+        if (this.$toast) this.$toast.error(state.errors).goAway(5000)
       }
-      vm.$toast && vm.$toast.error(state.errors[0]).goAway(3000)
       // console.log(state.errors)
     } else {
       state.errors = [e]
+      if (this.$toast) this.$toast.error(state.errors).goAway(5000)
+      // throw e // One error not suppose to throw another error
     }
-    // state.errors.map((message, i) => {
-    //   this.$toast.error(message).goAway(3000)
-    // })
+    state.errors.map((message, i) => {
+      if (this.$toast) this.$toast.error(message).goAway(3000)
+      return message
+    })
     state.loading = false
     // console.error('err at store...', e.toString())
   },
