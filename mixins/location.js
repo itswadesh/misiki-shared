@@ -99,7 +99,7 @@ export default {
             city: g.city,
             state: g.state,
             zip: g.zip,
-             lat: l.lat, lng: l.lng 
+            lat: l.lat, lng: l.lng 
           }
           console.log('Geo...', geo)
           this.$cookies.set('geo', geo, { path: '/', maxAge: this.settings.locationExpiry })

@@ -28,19 +28,6 @@ export default {
       // console.log('FCM:::', e.toString())
     }
   },
-  async fetchSettings({ commit, state, getters, $fire, params }, domain) {
-    try {
-      commit('clearErr')
-      const settings = (
-        await this.app.apolloProvider.defaultClient.query({ query: SETTINGS })
-      ).data.settings
-      commit('settings', settings)
-    } catch (e) {
-      commit('setErr', e)
-    } finally {
-      commit('busy', false)
-    }
-  },
   async fetchOnce({ commit, state, getters, $fire, params }, domain) {
     try {
       commit('clearErr')
@@ -66,38 +53,6 @@ export default {
     } catch (e) {
       commit('auth/setUser', null)
       commit('setErr', e)
-    } finally {
-      commit('busy', false)
-    }
-  },
-  async fetch({ commit, state, getters, $fire, params }, domain) {
-    try {
-      commit('clearErr')
-      const variables = { domain }
-      const stor = (
-        await this.app.apolloProvider.defaultClient.query({
-          query: STORE_ONE,
-          variables,
-        })
-      ).data.storeOne
-      if (stor) {
-        const megamenu = (
-          await this.app.apolloProvider.defaultClient.query({
-            query: MEGAMENU,
-            variables: { store: stor.id },
-          })
-        ).data.megamenu
-        commit('megamenu', megamenu)
-        commit('store', stor)
-      }
-    } catch (e) {
-      console.error('An error occurred while retrieving token. ', e)
-
-      if (
-        e.toString() !==
-        'Error: Network error: Unexpected token E in JSON at position 0'
-      )
-        commit('setErr', e)
     } finally {
       commit('busy', false)
     }

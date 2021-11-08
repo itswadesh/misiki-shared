@@ -35,6 +35,9 @@ export const plugins = [
   { src: '~/shared/plugins/lazy.js', ssr: false },
   { src: '~/shared/plugins/social.js', ssr: false },
   { src: '~/shared/plugins/scroll.js', ssr: false },
+  { src: '~/shared/plugins/ripple.js', ssr: false },
+  { src: '~/shared/plugins/slick.js' },
+  { src: '~/shared/plugins/gtag', ssr: false },
 ]
 // nuxt-purgecss is required. else it will eliminate All styles used in ~/shared/components (which style is not used any where else)
 export const buildModules = [

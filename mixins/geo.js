@@ -32,11 +32,10 @@ export default {
           this.$store.commit("busy", false);
           const location = (await this.getLocation()).coords;
           geo = await this.$axios.$get(
-            //   `/api/geo/location?lat=${location.latitude}&lng=${location.longitude}`
-            `/api/geo/location?lat=18.722615&lng=82.839649`
+              `/api/geo/location?lat=${location.latitude}&lng=${location.longitude}`
           );
           geo.coords = { lat: location.latitude, lng: location.longitude };
-          console.log("Geo...", geo);
+          // console.log("Geo...", geo);
           this.$cookies.set("geo", geo, { path: "/" });
           return geo;
         } catch (e) {

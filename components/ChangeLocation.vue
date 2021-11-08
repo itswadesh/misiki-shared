@@ -71,9 +71,9 @@ export default {
         if (!this.geo)
           return this.$store.commit('Error fetching location. Try again.')
         delete this.geo.__typename
-        await this.updateProfile({
-          address: this.geo,
-        })
+        // await this.updateProfile({
+        //   address: this.geo,
+        // })
       } catch (e) {
         if (e.toString() !== 'Error: GraphQL error: You must be signed in.')
           this.$store.commit('setErr', e)
