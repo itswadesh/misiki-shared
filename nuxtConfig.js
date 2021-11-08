@@ -27,9 +27,12 @@ export const css = [
 ]
 export const plugins = [
   { src: '~/shared/plugins/map.js', ssr: false },
+  { src: '~/shared/plugins/timer.js', ssr: false },
   { src: '~/shared/plugins/VueYoutube.js', ssr: false },
   { src: '~/shared/plugins/swal.js', ssr: false },
   { src: '~/shared/plugins/ui.js' },
+  { src: '~/shared/plugins/api.js' },
+  { src: '~/shared/plugins/vue-mq.js' },
   { src: '~/shared/plugins/filters.js' },
   { src: '~/shared/plugins/init.js', ssr: false },
   { src: '~/shared/plugins/lazy.js', ssr: false },
