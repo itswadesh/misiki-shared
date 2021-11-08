@@ -57,8 +57,7 @@ export default {
       commit('busy', false)
     }
   },
-  async nuxtClientInit({ state, commit, dispatch }, context) {
-  },
+  async nuxtClientInit({ state, commit, dispatch }, context) {},
   async nuxtServerInit({ state, commit, dispatch }, { params, app, req }) {
     const host = req.headers.host
     const domain = new URL('http://' + host)

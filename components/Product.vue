@@ -10,13 +10,31 @@
     <nuxt-link :to="`/${product.slug}`" class="relative block">
       <div
         v-if="product.time == '12 - 2 PM'"
-        class="absolute right-0 z-10 px-4 text-xs text-white bg-red-500 rounded-l-lg opacity-75"
+        class="
+          absolute
+          right-0
+          z-10
+          px-4
+          text-xs text-white
+          bg-red-500
+          rounded-l-lg
+          opacity-75
+        "
       >
         Lunch
       </div>
       <div
         v-else-if="product.time == '8:30 - 9:30 PM'"
-        class="absolute right-0 z-10 px-4 text-xs text-white bg-blue-500 rounded-l-lg opacity-75"
+        class="
+          absolute
+          right-0
+          z-10
+          px-4
+          text-xs text-white
+          bg-blue-500
+          rounded-l-lg
+          opacity-75
+        "
       >
         Dinner
       </div>
@@ -48,7 +66,16 @@
             {{ product.mrp | currency(settings.currency_symbol) }}
           </del>
           <div
-            class="flex items-center justify-center px-1 text-xs text-center text-white bg-green-500 rounded perc"
+            class="
+              flex
+              items-center
+              justify-center
+              px-1
+              text-xs text-center text-white
+              bg-green-500
+              rounded
+              perc
+            "
             v-show="calculateOffPercent > 0"
           >
             {{ calculateOffPercent }}% off
@@ -66,7 +93,7 @@
         </div>
       </div>
       <div class="bottom-0 py-1 text-xs border-t" v-if="product.vendor">
-        By {{ product.vendor.info.restaurant }}
+        By {{ product.vendor.info.store }}
       </div>
     </div>
   </div>

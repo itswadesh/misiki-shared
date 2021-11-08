@@ -20,7 +20,7 @@
         <img v-lazy="p.img" class="object-cover w-32 h-20 rounded" />
       </nuxt-link>
       <div class="relative w-full my-1">
-        <nuxt-link v-if="p.vendor" :to="`/chef/${p.vendor.info.restaurant}`">
+        <nuxt-link v-if="p.vendor" :to="`/chef/${p.vendor.info.store}`">
           <img
             v-lazy="`/${p.vendor.img}`"
             class="absolute top-0 right-0 object-contain w-4 h-4"
@@ -32,7 +32,7 @@
         <div class="flex justify-between">
           <div class="flex items-center text-sm tracking-widest text-gray-500">
             <MapPinIcon size="1x" />
-            {{ p.vendor.info.restaurant }}
+            {{ p.vendor.info.store }}
           </div>
           <div class="text-xl font-black text-gray-700">
             {{ p.price | currency(settings.currency_symbol) }}
